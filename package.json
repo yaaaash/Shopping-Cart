@@ -1,0 +1,30 @@
+{
+  "name": "gulp-browsersync",
+  "version": "1.0.0",
+  "description": "Source code for the Browsersync + Gulp tutorial on Coder Coder.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "cssnano": "^4.1.11",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^4.1.1",
+    "gulp-terser": "^1.4.1",
+    "postcss": "^8.1.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaaaash/gulp-browsersync.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yaaaash/gulp-browsersync/issues"
+  },
+  "homepage": "https://github.com/yaaaash/gulp-browsersync#readme"
+}
