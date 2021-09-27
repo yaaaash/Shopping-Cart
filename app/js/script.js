@@ -1,13 +1,10 @@
-const testString = 'This is a test!';
-
-console.log(testString);
-
-const fruits = [
-  'mango',
-  'papaya',
-  'lychee',
-];
-
-fruits.map((fruit) => {
-  console.log(fruit);
-});
+var removeCartItemButtons = document.getElementsByClassName('remove')
+console.log(removeCartItemButtons)
+for (var i=0; i<removeCartItemButtons.length; i++)
+{
+    var button = removeCartItemButtons[i]
+    button.addEventListener('click',function()
+    {
+        console.log('clicked')
+    })
+}
