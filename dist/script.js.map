@@ -1,0 +1,1 @@
+{"version":3,"sources":["script.js"],"names":["removeCartItemButtons","document","getElementsByClassName","console","log","i","length","button","addEventListener"],"mappings":"AAAA,IAAIA,sBAAwBC,SAASC,uBAAuB,UAC5DC,QAAQC,IAAIJ,uBACZ,IAAK,IAAIK,EAAE,EAAGA,EAAEL,sBAAsBM,OAAQD,IAC9C,CACI,IAAIE,OAASP,sBAAsBK,GACnCE,OAAOC,iBAAiB,SAAQ,WAE5BL,QAAQC,IAAI","file":"script.js"}
