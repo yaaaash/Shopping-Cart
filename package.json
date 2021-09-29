@@ -18,7 +18,11 @@
     "gulp-terser": "^1.4.1",
     "postcss": "^8.1.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^5.1.1",
+    "gulp-cli": "^2.3.0",
+    "jsdelivr": "^0.1.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yaaaash/gulp-browsersync.git"
