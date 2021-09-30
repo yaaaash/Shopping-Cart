@@ -1,50 +1,41 @@
-const { src, dest, watch, series } = require('gulp');
-const sass = require('gulp-sass');
-const postcss = require('gulp-postcss');
-const cssnano = require('cssnano');
+const { src, dest, watch, series, parallel } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const bs = require('browser-sync').create();
 const terser = require('gulp-terser');
-const browsersync = require('browser-sync').create();
 
-// Sass Task
-function scssTask(){
-  return src('app/scss/style.scss', { sourcemaps: true })
-    .pipe(sass())
-    .pipe(postcss([cssnano()]))
-    .pipe(dest('dist', { sourcemaps: '.' }));
+// Build CSS
+function styles() {
+    return src('app/css/style.scss', { sourcemaps: true })
+        .pipe(sass())
+        .pipe(dest('dist', { sourcemaps: '.' }))
+        .pipe(bs.stream());
 }
 
-// JavaScript Task
-function jsTask(){
-  return src('app/js/script.js', { sourcemaps: true })
-    .pipe(terser())
-    .pipe(dest('dist', { sourcemaps: '.' }));
+// Minify JS
+function scripts() {
+    return src(['node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'app/js/script.js'], { sourcemaps: true })
+        .pipe(terser())
+        .pipe(dest('dist', { sourcemaps: '.' }));
 }
 
-// Browsersync Tasks
-function browsersyncServe(cb){
-  browsersync.init({
-    server: {
-      baseDir: '.'
-    }
-  });
-  cb();
+// Browesersync task
+function bsInit() {
+    bs.init({
+        server: {
+            baseDir: '.'
+        }
+    });
+    watch('app/css//*.scss', styles);
+    watch('app/js//.js').on('change', series(scripts, bs.reload));
+    watch('./.html').on('change', bs.reload);
 }
 
-function browsersyncReload(cb){
-  browsersync.reload();
-  cb();
-}
-
-// Watch Task
-function watchTask(){
-  watch('*.html', browsersyncReload);
-  watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, jsTask, browsersyncReload));
-}
-
-// Default Gulp task
+// Gulp tasks
 exports.default = series(
-  scssTask,
-  jsTask,
-  browsersyncServe,
-  watchTask
-);
+    parallel(styles, scripts),
+    bsInit
+)
+
+exports.styles = styles;
+exports.scripts = scripts;
+exports.build = parallel(styles, scripts);

@@ -10,11 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.1.1",
+    "bootstrap": "^5.1.1"
+  },
+  "devDependencies": {
     "browser-sync": "^2.27.5",
+    "cssnano": "^5.0.8",
     "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
-    "gulp-terser": "^2.0.1",
-    "sass": "^1.41.1"
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.3.8",
+    "sass": "^1.42.1"
   }
 }
