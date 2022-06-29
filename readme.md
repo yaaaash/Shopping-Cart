@@ -16,5 +16,13 @@ This is a simple shopping cart website where users can browse through various pr
 * Easy Logic
 * Total amount is also generated
 
+# Simulation:
 
+* Browsing through:
+
+![Imgur Image](https://imgur.com/baONjyr.jpg)
+
+* Adding to cart:
+
+![Imgur Image](https://imgur.com/s1EIq9z.jpg)
 
