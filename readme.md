@@ -1,6 +1,6 @@
 # Shopping-Cart
 
-This is a simple shopping cart website where users can browse through various products with the functionality of adding items to their cart, generating total and then ckecing out.
+This is a simple shopping cart website where users can browse through various products with the functionality of adding items to their cart, generating total and then checking out.
 
 # Developed with:
 
@@ -14,7 +14,7 @@ This is a simple shopping cart website where users can browse through various pr
 
 * Unique Minimal Design
 * Easy Logic
-* Total is also generated
+* Total amount is also generated
 
 
 
